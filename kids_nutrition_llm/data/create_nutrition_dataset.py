@@ -75,9 +75,11 @@ def generate_dataset(num_samples=2000):
         dataset.append({"question": question, "answer": answer})
     return dataset
 
-def save_dataset(dataset, output_dir="."):
+def save_dataset(dataset, output_dir="../data"):
     """Saves the dataset to JSON, CSV, and JSONL files."""
-    output_dir = Path(output_dir)
+    # Get the absolute path of the script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    output_dir = Path(os.path.join(script_dir, output_dir))
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Save to JSON

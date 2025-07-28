@@ -13,12 +13,14 @@ from transformers import (
 
 def fine_tune_model(
     base_model="microsoft/DialoGPT-small",
-    dataset_path="data",
-    output_dir="models/nutrition_llm",
+    dataset_path="../data",
+    output_dir="../models/nutrition_llm",
 ):
     """Fine-tunes a pretrained model on the nutrition dataset."""
+    # Get the absolute path of the script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     # Load the dataset
-    dataset = load_dataset("json", data_files=os.path.join(dataset_path, "nutrition_dataset.jsonl"), split="train")
+    dataset = load_dataset("json", data_files=os.path.join(script_dir, dataset_path, "nutrition_dataset.jsonl"), split="train")
 
     # Load the tokenizer and model
     tokenizer = AutoTokenizer.from_pretrained(base_model)
