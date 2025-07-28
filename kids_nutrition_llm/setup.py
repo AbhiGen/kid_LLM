@@ -12,13 +12,13 @@ def run_full_mode():
     print("Setting up in full mode...")
     # Generate the dataset
     print("Generating dataset...")
-    subprocess.run([sys.executable, "data/create_nutrition_dataset.py"], check=True)
+    subprocess.run([sys.executable, "kids_nutrition_llm/data/create_nutrition_dataset.py"], check=True)
     # Fine-tune the model
     print("Fine-tuning the model...")
-    subprocess.run([sys.executable, "src/fine_tune_model.py"], check=True)
+    subprocess.run([sys.executable, "kids_nutrition_llm/src/fine_tune_model.py"], check=True)
     # Run the Gradio app
     print("Starting the Gradio application...")
-    subprocess.run([sys.executable, "deployment/app.py"], check=True)
+    subprocess.run([sys.executable, "kids_nutrition_llm/deployment/app.py"], check=True)
 
 def run_demo_mode():
     """Runs the application in demo mode."""

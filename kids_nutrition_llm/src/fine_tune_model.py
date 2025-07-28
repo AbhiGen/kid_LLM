@@ -13,8 +13,8 @@ from transformers import (
 
 def fine_tune_model(
     base_model="microsoft/DialoGPT-small",
-    dataset_path=".",
-    output_dir="../models/nutrition_llm",
+    dataset_path="data",
+    output_dir="models/nutrition_llm",
 ):
     """Fine-tunes a pretrained model on the nutrition dataset."""
     # Load the dataset
