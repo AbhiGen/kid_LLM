@@ -1,0 +1,10 @@
+transformers
+datasets
+peft
+lime
+gradio
+torch
+accelerate
+pandas
+scikit-learn
+openpyxl
